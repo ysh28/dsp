@@ -1,0 +1,45 @@
+%slip 6 skill
+%with function
+n = 0:6;
+x = [4 6 2 1 7 4 8]; % function is given
+a = fft(x);
+mag = abs(a);
+pha = angle(a);
+subplot(2,1,1);
+plot(mag);
+grid on
+title('Magnitude Response');
+subplot(2,1,2);
+plot(pha);
+grid on
+title('phase Response');
+
+% without
+clc;
+clear all;
+close all;
+tic;
+x=input('enter the sequence');
+n=input('enter the length of fft'); %compute fft
+disp('fourier transformed signal');
+X=fft(x,n)
+subplot(1,2,1);stem(x); title('i/p signal');
+xlabel('n --->');
+ylabel('x(n) -->');grid;
+subplot(1,2,2);stem(X);
+title('fft of i/p x(n) is:');
+xlabel('Real axis --->');
+ylabel('Imaginary axis -->');grid;
+%[1, 0.25, 0.3, 4, 5, 6, 7, 8]
+% 8
+
+%Q3)FFT detects mechanical faults in rotating equipment 
+% by converting vibration signals from the time 
+% domain to the frequency domain.It identifies
+% dominant frequencies associated with
+% specific faults, such as imbalance, which appears
+% as a peak at the rotational frequency (1x RPM), 
+% or misalignment, which shows harmonics at multiples
+% of the rotational frequency (e.g., 2x, 3x RPM).
+% By analyzing these frequency patterns, FFT helps pinpoint faults early, 
+% enabling timely maintenance and preventing failures.
