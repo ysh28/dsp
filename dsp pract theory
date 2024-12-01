@@ -1,0 +1,72 @@
+P1
+What is sampling rate?
+
+The sampling rate is the number of samples taken per second from a
+continuous signal to create a discrete signal. It is measured in samples
+per second (Hz).
+
+
+P2
+2] Calculate the constant k for a resonator frequency of 500 Hz at 
+a sampling frequency of 8 kHz
+
+k=2π fo/fs
+fo is the resonant frequency (500 Hz).
+fs is the sampling frequency (8000 Hz).
+k represents the angle in radians for one sample step.
+
+k= 2pi 500/8000
+k= 2 pi x 0.0625
+k= 0.3927 radians
+
+
+P3
+Test a square-wave signal with a fundamental frequency of 100 Hz and two
+harmonics at the specified sampling frequency of 8 kHz
+
+Fundamental Frequency: 100 Hz
+Harmonics: First two harmonics (300 Hz, 500 Hz)
+Sampling Frequency: 8 kHz
+Signal Duration: Assume 0.1 seconds (for visualization).
+
+x(t)=sin(2pifot)+1/3sin(2pi3fot)+1/5sin(2pi5fot)
+f0=100
+3f0=300
+5fo=500
+
+
+P5
+Describe how vibration signals are acquired in a mechanical system
+
+Select Sensor: Use accelerometers or velocity sensors.
+Place Sensor: Mount on key machine parts.
+Condition Signal: Amplify and filter signals.
+Acquire Data: Use DAQ to digitize signals.
+Sample: Ensure sufficient sampling rate.
+Store & Analyze: Save data and perform frequency analysis.
+Monitor: Detect faults and ensure machine health.
+
+
+P6
+Write Equation of Hamming, Hanning and Rectangular Window
+
+N=lenth of window
+n=sample index
+
+Hamming window:
+w(n)=0.54-0.46 cos(2pi n/N-1), 0<n<N-1
+
+Hanning window:
+w(n)=0.5(1-cos(2pi n/N-1))
+
+Rectangular window:
+w(n)=1
+
+
+P7
+Equation of Butterworth filter
+H(s)= 1/root 1+(s/wc)2n
+
+s= complex freq variable
+wc=cutoff angular freq
+n= order of filter
