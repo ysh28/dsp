@@ -1,0 +1,69 @@
+clc;
+close all;
+clear all;
+xn=input('Enter the input sequence=');
+ln=length(xn);
+xk=zeros(1,ln);
+ixk=zeros(1,ln);
+%obtain DFT
+for k=0:ln-1
+for n=0:ln-1
+xk(k+1)=xk(k+1)+(xn(n+1)*exp((-i)*2*pi*k*n/ln));
+end
+end
+t=0:ln-1;
+subplot(221);
+stem(t,xn);
+ylabel('amplitude');
+xlabel('time index');
+title('input sequence');
+%magnitude plot
+magnitude=abs(xk);
+t=0:ln-1;
+subplot(222);
+stem(t,magnitude);
+ylabel('amplitude');
+xlabel('k');
+title('magnitude responce');
+%phase responce
+phase=angle(xk);
+t=0:ln-1;
+subplot(223);
+stem(t,phase);
+title('phase responce');
+% inverse DFT
+ixk=ixk./ln;
+t=0:ln-1;
+subplot(224);
+stem(t,xn);
+ylabel('amplitude');
+xlabel('time index');
+1
+title('input sequence obtained after DFT and IDFT');
+%[12564]
+
+%3)DFT is used in MP3 audio compression by converting the audio
+% signal from the time domain to the frequency domain. 
+% This allows for the removal of less perceptible frequencies, 
+% based on human hearing sensitivity. After DFT, less important 
+% frequency components are discarded or quantized with fewer bits, 
+% significantly reducing file size. Techniques like Huffman coding 
+% further compress the data, and the Inverse DFT reconstructs the 
+% audio with minimal loss of quality. This process efficiently 
+% compresses audio while maintaining sound fidelity.
+%4)DFT is used to analyze vibration signals by converting them from the time
+% domain to the frequency domain. It identifies dominant frequencies 
+% associated with specific mechanical components, such as bearings or gears. 
+% By examining the frequency spectrum, abnormal peaks or shifts can be
+% detected, indicating potential faults like imbalance, misalignment, or wear.
+% These dominant frequencies serve as indicators of mechanical issues, allowing
+% for early detection and prediction of failures before they cause significant damage.
+
+% linear= if x(n)---X(k) & y(n)---Y(k)
+% a*x(n)---b*y(n)---a*x(k)+b*y(k)
+
+%time s= if X(n)---X(k)
+%x[(n-m)N]---X(k)*e^-j2pikm/N
+
+%Parsaval=  if X(n)---X(k)
+% sum mod X(n)^2 = 1/N* sum mod X(k)^2 
