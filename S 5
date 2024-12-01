@@ -1,0 +1,28 @@
+syms a n;
+xn=1^n;
+Xz=ztrans(xn);
+disp('x(n)')
+pretty(xn);
+disp('X(z)');
+pretty((Xz));
+
+syms n;
+xn=(1/2)^n+(-1/3)^n;
+Xz=ztrans(xn);
+izx=iztrans(Xz);
+disp('x(n)');
+pretty(xn);
+disp('X(z)');
+pretty(Xz);
+disp('izx');
+pretty(izx);
+
+%The Z-transform is used to design a discrete-time PID controller by converting the 
+% continuous-time PID terms into discrete equivalents.
+%The proportional term remains, the integral term becomes (1)and the
+%derivative term is approximated as(2)where Ts is the sampling period.
+% These terms are combined into a discrete-time transfer function, allowing the PID
+% controller to compute precise control signals for the DC motor, ensuring accurate and stable operation of the robotic arm.
+
+
+
