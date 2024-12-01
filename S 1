@@ -1,0 +1,118 @@
+% unit impulse
+t=-5:0.01:5;
+impulse_ct=t==0;
+figure;
+plot(t,impulse_ct);
+title('Unit impulse ct');
+xlabel('time');
+ylabel('Amplitude');
+
+n=-5:5;
+impulse_dt=n==0;
+figure;
+stem(n,impulse_dt);
+title('Unit impulse dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%unit step
+t=-5:0.01:5;
+step_ct=t>=0;
+figure;
+plot(t,step_ct);
+title('Unit step ct');
+xlabel('time');
+ylabel('Amplitude');
+
+n=-5:5;
+step_dt=n>=0;
+figure;
+stem(n,step_dt);
+title('Unit step dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%unit ramp
+t=-5:0.01:5;
+ramp_ct=t.*(t>=0);
+figure;
+plot(t,ramp_ct);
+title('Unit ramp ct');
+xlabel('t');
+ylabel('Amplitude');
+
+n=-5:5;
+ramp_dt=n.*(n>=0);
+figure;
+stem(n,ramp_dt);
+title('Unit ramp dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%exponential
+t=-5:0.01:5;
+exp_ct=exp(t);
+figure;
+plot(t,exp_ct);
+title('Exponential ct');
+xlabel('t');
+ylabel('Amplitude');
+
+n=-5:5;
+exp_dt=exp(n);
+figure;
+stem(n,exp_dt);
+title('Exponential dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%sin
+t=-5:0.01:5;
+sin_ct=sin(2*3.14*t);
+figure;
+plot(t,sin_ct);
+title('sin ct');
+xlabel('t');
+ylabel('Amplitude');
+
+n=-5:5;
+sin_dt=sin(2*3.14*n/10);
+figure;
+stem(n,sin_dt);
+title('sin dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%cos
+t=-5:0.01:5;
+cos_ct=cos(2*3.14*t);
+figure;
+plot(t,cos_ct);
+title('cos ct');
+xlabel('t');
+ylabel('Amplitude');
+
+n=-5:5;
+cos_dt=cos(2*3.14*n/10);
+figure;
+stem(n,cos_dt);
+title('cos dt');
+xlabel('n');
+ylabel('Amplitude');
+
+%rectangular
+t=-5:0.01:5;
+rect_ct=(t>=-1 & t<=1);
+figure;
+plot(t,rect_ct);
+title('rectangular ct');
+xlabel('t');
+ylabel('Amplitude');
+
+n=-5:5;
+rect_dt=(n>=-2 & n<=2);
+figure;
+stem(n,rect_dt);
+title('rectangular dt');
+xlabel('n');
+ylabel('Amplitude');
